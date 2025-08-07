@@ -5,7 +5,7 @@ import { getMoive } from '../../api/apiGetMovie'
 const movie = ref(null)
 
 onMounted(async () => {
-  await getMoive()
+  movie.value = await getMoive()
 })
 </script>
 

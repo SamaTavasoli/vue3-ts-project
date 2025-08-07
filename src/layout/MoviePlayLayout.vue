@@ -1,21 +1,21 @@
 <script setup lang="ts">
-
-import detail from '../pages/MoviePlay/details.vue'
-import moviePlayer from '../pages/MoviePlay/moviePlayer.vue'
-import rating from '../pages/MoviePlay/rating.vue'
-import sidebar from '../pages/MoviePlay/sidebar.vue'
-
+import detail from "../pages/MoviePlay/details.vue"
+import moviePlayer from "../pages/MoviePlay/moviePlayer.vue"
+import sidebar from "../pages/MoviePlay/sidebar.vue"
 </script>
 
 <template>
+<div>
+    <div>
+    <detail />
+  </div>
 
-<detail/>
-<rating/>
-<moviePlayer/>
-
-<sidebar/>
+  <div>
+    <moviePlayer />
+    <sidebar />
+  </div>
+</div>
+  
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

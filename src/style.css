@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@import "../public/font/fontFace.css";
+
+
+* {
+    font-family: 'IRANYekanXFaNum';
+    /* direction: rtl; */
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
