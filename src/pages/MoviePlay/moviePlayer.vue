@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { getMoive } from "../../api/apiGetMovie";
-
+import Footer from "../../components/footer.vue";
 const movie = ref(null);
 
 onMounted(async () => {
@@ -10,14 +10,19 @@ onMounted(async () => {
 </script>
 
 <template>
+  <div>
     <div class="p-2 relative inline-block">
       <img :src="movie?.poster" alt="" class="rounded-md block" />
       <button
         class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
-        <img src="../../../public/icon/playIcon.svg" alt="" width="25px"/>
+        <img src="../../../public/icon/playIcon.svg" alt="" width="25px" />
       </button>
     </div>
+    <div>
+      <Footer />
+    </div>
+  </div>
 </template>
 
 <style scoped>
