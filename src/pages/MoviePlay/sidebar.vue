@@ -14,7 +14,7 @@ onMounted(async () => {
 <template>
   <div class="flex flex-col w-[400px]">
     <div v-for="e in episodes" :key="e">
-      <div class="flex flex-row py-2 px-4">
+      <div class="flex flex-row py-2 px-4 cursor-pointer">
         <div><img :src="e?.poster" alt="" class="w-[150px] rounded-md" /></div>
         <div class="grid grid-col justify-items-start p-2 m-auto">
           <span class="p-2"> سریال {{ movie?.title_en }}</span>
