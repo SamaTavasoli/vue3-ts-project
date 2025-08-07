@@ -10,7 +10,7 @@ import sidebar from "../pages/MoviePlay/sidebar.vue"
     <detail />
   </div>
 
-  <div>
+  <div class="flex">
     <moviePlayer />
     <sidebar />
   </div>

@@ -51,8 +51,8 @@ const roundedUserRating = computed(() => {
       <div class="flex p-2 items-center" dir="ltr">
         <img
           src="../../../public/img/imdb.svg"
-          height="40px"
-          width="40px"
+          height="25px"
+          width="25px"
           alt=""
           class="m-1"
         />
