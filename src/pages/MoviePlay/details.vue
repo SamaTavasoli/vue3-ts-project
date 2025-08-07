@@ -1,24 +1,65 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { getMoive } from '../../api/apiGetMovie'
+import { ref, onMounted, computed } from "vue";
+import { getMoive } from "../../api/apiGetMovie";
 
-const movie = ref(null)
+const movie = ref(null);
 
 onMounted(async () => {
-  movie.value = await getMoive()
-})
+  movie.value = await getMoive();
+});
+
+const roundedUserRating = computed(() => {
+  return movie.value ? Math.round(movie.value.user_rating) : null;
+});
 </script>
 
-<template>
-<div>
-    <div class="flex flex-col">
-        <span class="text-lg">{{movie?.title_en}} سریال </span>
-        <span>{{ movie?.title_fa }}</span>
+<template class="">
+  <div class="flex justify-between w-[1300px] m-auto">
+    <div class="flex justify-between">
+      <span class="bg-red-800 flex flex-col p-1 rounded-lg text-white m-2">
+        <span class="bg-white text-red-800 m-auto px-3 rounded-sm">1080</span>
+        <span>WebDL</span>
+      </span>
+      <div class="flex flex-col">
+        <span class="text-2xl"> سریال {{ movie?.title_en }}</span>
+        <span>{{ movie?.title_fa }} ({{ movie?.year }}) </span>
+      </div>
     </div>
-    <div></div>
-</div>
+
+    <div class="flex text-[17px] items-center">
+      <div class="p-2">Rotten Tomatoes: {{ movie?.rotten }}</div>
+      <div class="p-2">metacritic: {{ movie?.metacritic }}</div>
+      <div class="p-2 flex">
+        <div v-for="n in 5 - roundedUserRating" :key="n">
+          <img
+            src="../../../public/img/grayStar.svg"
+            alt=""
+            width="25px"
+            height="25px"
+          />
+        </div>
+        <div v-for="n in roundedUserRating" :key="n">
+          <img
+            src="../../../public/img/yellowStar.svg"
+            alt=""
+            width="25px"
+            height="25px"
+          />
+        </div>
+      </div>
+      <div>{{ movie?.user_rating }} :امتیاز کاربران</div>
+      <div class="flex p-2 items-center" dir="ltr">
+        <img
+          src="../../../public/img/imdb.svg"
+          height="40px"
+          width="40px"
+          alt=""
+          class="m-1"
+        />
+        {{ movie?.imdb }}<span class="text-gray-400 text-[13px]">/10</span>
+      </div>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

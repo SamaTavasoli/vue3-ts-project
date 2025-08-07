@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { getMoive } from '../../api/apiGetMovie'
+import { ref, onMounted } from "vue";
+import { getMoive } from "../../api/apiGetMovie";
 
-const movie = ref(null)
+const movie = ref(null);
 
 onMounted(async () => {
-  movie.value = await getMoive()
-})
+  movie.value = await getMoive();
+});
 </script>
 
 <template>
-
+  <div>
+    
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
