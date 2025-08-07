@@ -3,8 +3,8 @@
 </script>
 
 <template>
-  <div>
-    
+  <div dir="rtl">
+    <router-view />
   </div>
   
 </template>
