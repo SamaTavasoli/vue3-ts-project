@@ -3,10 +3,7 @@
 </script>
 
 <template>
-  <div dir="rtl">
-    <router-view />
-  </div>
-  
+  <router-view />
 </template>
 
 <style scoped>
