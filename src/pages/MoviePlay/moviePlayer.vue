@@ -11,10 +11,9 @@ onMounted(async () => {
 
 <template>
     <div class="p-2 relative inline-block">
-      <!-- inline-block تا فقط به اندازه محتوا باشه -->
       <img :src="movie?.poster" alt="" class="rounded-md block" />
       <button
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
         <img src="../../../public/icon/playIcon.svg" alt="" width="25px"/>
       </button>

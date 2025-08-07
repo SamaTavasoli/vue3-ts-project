@@ -27,8 +27,26 @@ const roundedUserRating = computed(() => {
     </div>
 
     <div class="flex text-[17px] items-center">
-      <div class="p-2">Rotten Tomatoes: {{ movie?.rotten }}</div>
-      <div class="p-2">metacritic: {{ movie?.metacritic }}</div>
+      <div class="flex p-2 items-center" dir="ltr">
+        <img
+          src="../../../public/img/rt.svg"
+          height="25px"
+          width="25px"
+          alt=""
+          class="m-1"
+        />
+        {{ movie?.rotten }}
+      </div>
+      <div class="flex p-2 items-center" dir="ltr">
+        <img
+          src="../../../public/img/metacritic.svg"
+          height="25px"
+          width="25px"
+          alt=""
+          class="m-1"
+        />
+        {{ movie?.metacritic }}
+      </div>
       <div class="p-2 flex">
         <div v-for="n in 5 - roundedUserRating" :key="n">
           <img
