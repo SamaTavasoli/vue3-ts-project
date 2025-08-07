@@ -18,21 +18,21 @@ onMounted(async () => {
         <div><img :src="e?.poster" alt="" class="w-[150px] rounded-md" /></div>
         <div class="grid grid-col justify-items-start p-2 m-auto">
           <span class="p-2"> سریال {{ movie?.title_en }}</span>
-          <span class="p-2"> قسمت {{ e?.number }} </span>
+          <span class="p-2 text-xs"> قسمت {{ e?.number }} </span>
           <div class="flex items-center justify-between w-full p-2">
-            <div>{{ movie?.year }}</div>
+            <div class="text-xs">{{ movie?.year }}</div>
             <div class="flex">
-                <div>{{ movie?.user_rating }}</div>
+                <div class="text-xs">{{ movie?.user_rating }}</div>
               <img
                 src="../../../public/img/yellowStar.svg"
                 alt=""
-                width="25px"
-                height="25px"
+                width="20px"
+                height="20px"
               />
             </div>
           </div>
           <div class="flex">
-            <div class="flex p-2 items-center" dir="ltr">
+            <div class="flex p-2 items-center text-xs" dir="ltr">
               <img
                 src="../../../public/img/imdb.svg"
                 height="20px"
@@ -43,7 +43,7 @@ onMounted(async () => {
               {{ movie?.imdb
               }}<span class="text-gray-400 text-[13px]">/10</span>
             </div>
-            <div class="flex p-2 items-center" dir="ltr">
+            <div class="flex p-2 items-center text-xs" dir="ltr">
               <img
                 src="../../../public/img/rt.svg"
                 height="20px"
@@ -53,7 +53,7 @@ onMounted(async () => {
               />
               {{ movie?.rotten }}
             </div>
-            <div class="flex p-2 items-center" dir="ltr">
+            <div class="flex p-2 items-center text-xs" dir="ltr">
               <img
                 src="../../../public/img/metacritic.svg"
                 height="20px"

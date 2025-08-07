@@ -14,7 +14,7 @@ const roundedUserRating = computed(() => {
 </script>
 
 <template class="">
-  <div class="flex justify-between w-[1300px] m-auto">
+  <div class="flex justify-between w-[1300px] m-auto py-2">
     <div class="flex justify-between">
       <span class="bg-red-800 flex flex-col p-1 rounded-lg text-white m-2">
         <span class="bg-white text-red-800 m-auto px-3 rounded-sm">1080</span>
