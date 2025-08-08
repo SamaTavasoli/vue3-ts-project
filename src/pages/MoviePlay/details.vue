@@ -7,14 +7,13 @@ const selectedEpisode = ref(null)
 
 onMounted(async () => {
   movie.value = await getMoive()
-})
 
-onMounted(() => {
   const episodeData = localStorage.getItem("selectedEpisode")
   if (episodeData) {
     selectedEpisode.value = JSON.parse(episodeData)
   }
 })
+
 
 const roundedUserRating = computed(() => {
   return movie.value ? Math.round(movie.value.user_rating) : null
@@ -36,7 +35,7 @@ const roundedUserRating = computed(() => {
       </div>
     </div>
     <div class="flex text-[17px] items-center flex-wrap">
-      <div class=" mx-10 flex hidden sm:flex">
+      <div class=" mx-10 flex hidden sm:flex" v-if="selectedEpisode">
         <img src="../../../public/icon/play-circle.svg" alt="" class="px-2">
         قسمت {{ selectedEpisode?.number }}
       </div>
