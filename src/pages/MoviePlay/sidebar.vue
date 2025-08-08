@@ -19,49 +19,36 @@ onMounted(async () => {
         <div class="grid grid-col justify-items-start p-2 m-auto">
           <span class="p-2"> سریال {{ movie?.title_en }}</span>
           <span class="p-2 text-xs"> قسمت {{ e?.number }} </span>
-          <div class="flex items-center justify-between w-full p-2">
-            <div class="text-xs">{{ movie?.year }}</div>
-            <div class="flex">
-                <div class="text-xs">{{ movie?.user_rating }}</div>
+          
+          <div class="flex items-center">
+            <div class="flex items-center text-xs m-1" dir="ltr">
               <img
-                src="../../../public/img/yellowStar.svg"
+                src="../../../public/icon/fire.svg"
+                height="25px"
+                width="25px"
                 alt=""
-                width="20px"
-                height="20px"
+                class="m-1 bg-[#FB7800] py-1 px-1.5 rounded-md"
               />
             </div>
-          </div>
-          <div class="flex">
-            <div class="flex p-2 items-center text-xs" dir="ltr">
+            <div class="flex px-1  items-center text-xs bg-[#245DEF] rounded-md h-[30px] m-1" dir="ltr">
+              زیرنویس
               <img
-                src="../../../public/img/imdb.svg"
+                src="../../../public/icon/sub.svg"
                 height="20px"
                 width="20px"
                 alt=""
                 class="m-1"
               />
-              {{ movie?.imdb
-              }}<span class="text-gray-400 text-[13px]">/10</span>
             </div>
-            <div class="flex p-2 items-center text-xs" dir="ltr">
+            <div class="flex p-1 items-center text-xs bg-[#43B100] rounded-md h-[30px] m-1" dir="ltr">
+              دوبله
               <img
-                src="../../../public/img/rt.svg"
+                src="../../../public/icon/microphone.svg"
                 height="20px"
                 width="20px"
                 alt=""
                 class="m-1"
               />
-              {{ movie?.rotten }}
-            </div>
-            <div class="flex p-2 items-center text-xs" dir="ltr">
-              <img
-                src="../../../public/img/metacritic.svg"
-                height="20px"
-                width="20px"
-                alt=""
-                class="m-1"
-              />
-              {{ movie?.metacritic }}
             </div>
           </div>
         </div>

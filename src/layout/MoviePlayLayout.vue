@@ -13,10 +13,8 @@ import Sidebar from "../pages/MoviePlay/sidebar.vue"
     <Detail />
   </div>
 
-  <div class="flex flex-row justify-between max-w-[1300px] m-auto">
+  <div class="flex flex-row justify-between max-w-[1300px] m-auto flex-wrap">
     <MoviePlayer />
     <Sidebar />
   </div>
-
-  <Footer />
 </template>

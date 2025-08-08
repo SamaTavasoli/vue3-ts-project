@@ -2,7 +2,7 @@
 
 <template>
   <div class="flex flex-wrap">
-    <div class="text-xs">
+    <div class="text-xs flex justify-center-safe">
       <button class="!bg-red-800 m-1">پلیر تلویزیون های سامسونگ</button>
       <button class="!bg-[#242629] m-1">پلیر تلویزیون های قدیمی</button>
       <button class="!bg-[#242629] m-1">پلیر تلویزیون های قدیمی</button>
