@@ -1,5 +1,24 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript Project
+This is a Vue 3 project built with TypeScript and Vite. It includes modular components and API integration.
+# Project Setup
+npm install
+# Run Development Server
+npm run dev
+# Features
+Vue 3 Composition API
+TypeScript support
+Modular file structure
+API integration
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+vue3-ts-project/
+├── public/              # images+fonts+icons
+├── src/
+│   ├── components/
+│   ├── pages/           # pages
+│   ├── router/          # Routing setup
+│   ├── layout/
+│   ├── utils/           # axios file
+│   ├── api/             # API calls
+│   └── App.vue          # Main app component
+├── index.html
+└── .env                 # base URL
