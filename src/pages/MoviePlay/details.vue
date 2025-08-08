@@ -3,14 +3,22 @@ import { ref, onMounted, computed } from "vue";
 import { getMoive } from "../../api/apiGetMovie";
 
 const movie = ref(null);
+const selectedEpisode = ref(null)
 
 onMounted(async () => {
-  movie.value = await getMoive();
-});
+  movie.value = await getMoive()
+})
+
+onMounted(() => {
+  const episodeData = localStorage.getItem("selectedEpisode")
+  if (episodeData) {
+    selectedEpisode.value = JSON.parse(episodeData)
+  }
+})
 
 const roundedUserRating = computed(() => {
-  return movie.value ? Math.round(movie.value.user_rating) : null;
-});
+  return movie.value ? Math.round(movie.value.user_rating) : null
+})
 </script>
 
 <template class="">
@@ -27,8 +35,11 @@ const roundedUserRating = computed(() => {
         </span>
       </div>
     </div>
-
     <div class="flex text-[17px] items-center flex-wrap">
+      <div class=" mx-10 flex hidden sm:flex">
+        <img src="../../../public/icon/play-circle.svg" alt="" class="px-2">
+        قسمت {{ selectedEpisode?.number }}
+      </div>
       <div class="flex p-2 items-center justify-center-safe hidden sm:flex" dir="ltr">
         <img
           src="../../../public/img/rt.svg"

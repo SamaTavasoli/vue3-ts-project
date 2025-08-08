@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue";
-import { getMoive } from "../../api/apiGetMovie";
+import { ref, onMounted, computed } from "vue"
+import { getMoive } from "../../api/apiGetMovie"
 
-const movie = ref(null);
+const movie = ref(null)
 
-const episodes = computed(() => movie.value?.episodes || []);
+const episodes = computed(() => movie.value?.episodes || [])
+
+const handleEpisodeClick = (episode: any) => {
+  localStorage.setItem("selectedEpisode", JSON.stringify(episode))
+  window.location.reload()
+}
 
 onMounted(async () => {
   movie.value = await getMoive();
@@ -14,12 +19,15 @@ onMounted(async () => {
 <template>
   <div class="flex flex-col w-[400px]">
     <div v-for="e in episodes" :key="e">
-      <div class="flex flex-row py-2 px-4 cursor-pointer">
+      <div
+        class="flex flex-row py-2 px-4 cursor-pointer"
+        @click="handleEpisodeClick(e)"
+      >
         <div><img :src="e?.poster" alt="" class="w-[150px] rounded-md" /></div>
         <div class="grid grid-col justify-items-start p-2 m-auto">
           <span class="p-2"> سریال {{ movie?.title_en }}</span>
           <span class="p-2 text-xs"> قسمت {{ e?.number }} </span>
-          
+
           <div class="flex items-center">
             <div class="flex items-center text-xs m-1" dir="ltr">
               <img
@@ -30,7 +38,10 @@ onMounted(async () => {
                 class="m-1 bg-[#FB7800] py-1 px-1.5 rounded-md"
               />
             </div>
-            <div class="flex px-1  items-center text-xs bg-[#245DEF] rounded-md h-[30px] m-1" dir="ltr">
+            <div
+              class="flex px-1 items-center text-xs bg-[#245DEF] rounded-md h-[30px] m-1"
+              dir="ltr"
+            >
               زیرنویس
               <img
                 src="../../../public/icon/sub.svg"
@@ -40,7 +51,10 @@ onMounted(async () => {
                 class="m-1"
               />
             </div>
-            <div class="flex p-1 items-center text-xs bg-[#43B100] rounded-md h-[30px] m-1" dir="ltr">
+            <div
+              class="flex p-1 items-center text-xs bg-[#43B100] rounded-md h-[30px] m-1"
+              dir="ltr"
+            >
               دوبله
               <img
                 src="../../../public/icon/microphone.svg"
